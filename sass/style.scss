@@ -1,0 +1,322 @@
+@import "compass";
+@import "breakpoint";
+@import "compass/css3/transform";
+@import "compass/css3/box-shadow";
+@import "compass/css3/filter";
+@import "compass/reset";
+
+@mixin shadow ($style,$style2) {
+  @include box-shadow($style,$style2);
+}
+
+
+$pc1024: max-width 1025px;
+$ipad: max-width 1000px;
+$iphone: max-width 768px;
+$iphone5: max-width 414px;
+$iphone6: max-width 375px;
+$Android: max-width 320px;
+
+body {
+    background-color: #000;
+    background-image: url(../images/bg2.png);
+    background-position: 100% 100%;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    overflow-x: hidden;
+    color: #fff;
+}
+a {
+  text-decoration: none;
+  color: #fff;
+  &:visited {
+    color: #fff;
+  }
+}
+html,button,input {
+  font-family: Microsoft JhengHei,Helvetica,sans-serif;
+  font-size: 16px;
+  line-height: 1.42857143;
+  color: #000000;
+  outline:none;
+  overflow-x:hidden; 
+}
+.container {
+    width: 1024px;
+    margin: auto;
+    @include breakpoint($pc1024) {
+        width: 95%;
+    }
+    @include breakpoint($ipad) {
+        width: 95%;
+    } 
+    @include breakpoint($iphone) {
+        width: 95%;   
+    }  
+}
+    #test {
+        display: none;
+        .data {
+          opacity: 0;
+        }
+    }
+
+#status {
+  width: 25px;
+  height: 25px;
+  position: relative;
+  top: -26px;
+  left: 150px;
+  @include breakpoint($iphone5) {
+    top: -40px;
+    left: 265px;
+  }
+      &.loading{
+        background-image: url(../images/loading.gif);
+      }
+      &.ok{
+        background-image: url(../images/ok.gif);
+      }
+      &.no{
+        background-image: url(../images/no.png);
+      }
+}
+#emailstatus {
+  width: 25px;
+  height: 25px;
+  position: relative;
+  top: -26px;
+  left: 150px;
+  @include breakpoint($iphone5) {
+    top: -40px;
+    left: 265px;
+  }
+      &.loading{
+        background-image: url(../images/loading.gif);
+      }
+      &.ok{
+        background-image: url(../images/ok.gif);
+      }
+      &.no{
+        background-image: url(../images/no.png);
+      }
+}
+.tittle {
+    padding: 30px 0px;
+    border-bottom: solid 1px;
+    border-top: solid 1px;
+    margin: 100px auto;
+    text-align: center;
+    @include breakpoint($iphone5) {
+        margin: 50px auto;
+    }
+    img {
+        width: 820px;
+        margin: auto;
+        @include breakpoint($pc1024) {
+            width: 95%;
+        }        
+    }
+}
+.book {
+    display: flex;
+    width: 830px;
+    margin: 0% auto 20% auto; 
+    @include breakpoint($iphone) {
+        width: 85%;
+    }
+    @include breakpoint($iphone5) {
+        width: 95%;
+        flex-direction: column;
+    }
+}
+.bookimg,.text { 
+  p {
+    text-align: center;
+  }
+    img {
+      width: 100%
+    }
+}
+.bookimg {
+  width: 26%;
+  @include breakpoint($iphone5) {
+    width: 50%;
+    margin: auto;
+  }
+}
+.text {
+    padding-left: 40px;
+    padding-top: 20px;
+    @include breakpoint($iphone) {
+        padding-left: 5px;
+    }
+  @include breakpoint($iphone5) {
+    padding-left: 0px;
+  }
+}
+.cw {
+    font-size: 2.5rem;
+    color: #f9d300; 
+    font-weight: bold; 
+    @include breakpoint($iphone) {
+        font-size: 2rem;
+    }
+    @include breakpoint($iphone5) {
+        font-size: 1.5rem;
+    }
+    @include breakpoint($Android) {
+      font-size: 1.2rem;
+    }
+}
+.imformation {
+    color: #f9d300;
+    font-size: 2rem;
+    letter-spacing: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+    @include breakpoint($iphone) {
+        font-size: 1.5rem;
+        letter-spacing: 13px;
+    }
+  @include breakpoint($iphone5) {
+    font-size: 1.5rem;
+    letter-spacing: 3px;
+  }
+    @include breakpoint($Android) {
+      font-size: 1.2rem;
+    }
+}
+.recommand {
+    line-height: 50px;
+    font-size: 1.6rem;
+    @include breakpoint($iphone) {
+        font-size: 1.4rem;
+    }
+  @include breakpoint($iphone5) {
+    font-size: 1rem;
+        line-height: 40px;
+  }
+    @include breakpoint($Android) {
+      font-size: 0.8rem;
+    }
+}
+.active {
+    font-size: 1.63rem;
+    text-align: justify;
+    font-weight: bold;
+    margin-bottom: 10%;
+  @include breakpoint($iphone5) {
+    font-size: 0.8rem;
+  }
+    @include breakpoint($Android) {
+      font-size: 0.8rem;
+    }
+  &:after {
+    content: "123";
+    position: absolute;
+    color: rgba(255, 255, 255, 0);
+    z-index: -1;
+    width: 106%;
+    top: 700px;
+    left: -30px;
+    height: 100%;
+    background-image: url(../images/bg1.png);
+    background-repeat: repeat-x;
+    background-size: 100% 100%;
+    @include breakpoint($iphone) { 
+        width: 150%;
+        top: 560px;
+        left: -190px;
+    }
+    @include breakpoint($iphone5) {
+      background-image: url(../images/mbbg1.png);
+      top: 530px;
+      left: 0px;
+      width: 100%;
+    }
+    @include breakpoint($Android) {
+      top: 480px;
+      left: 0px;
+    }
+  } 
+}
+.footer {
+    text-align: center;
+    margin: 5% 0% 12% 0%;
+}
+.freebook {
+    cursor: pointer;
+    position: fixed;
+    z-index: 2;
+    bottom: -75px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #152d43;
+    background: linear-gradient(to top, #0a1520, #0a1520, #09141f, #21507b);
+    background: linear-gradient(to top, #0a1520, #0a1520, #09141f, #21507b);
+    background: linear-gradient(to top, #0a1520, #0a1520, #09141f, #21507b);
+    background: linear-gradient(to top, #0a1520, #0a1520, #09141f, #21507b);
+    box-shadow: inset 0px 2px 5px 1px #45d3e8, inset 8px 13px 9px rgba(69, 211, 232, 0), inset 1px 1px 1px 0px #000;
+    width: 150px;
+    height: 150px;
+    border-radius: 100%; 
+    &:before {
+    content: "免費贈書";
+    color: #f9d300;
+    position: absolute;
+    bottom: 85px;
+    letter-spacing: 2px;
+    left: 28px;
+    font-size: 1.4rem;
+    z-index: 2;
+    } 
+}
+.btn {
+    cursor: pointer;
+    background: #f9d300;
+    color: #000;
+    font-size: 2rem;
+    font-weight: bold;
+    letter-spacing: 15px;
+    padding: 5px;
+    border: 0;
+    width: 100%;
+    margin: 20px auto;
+        height: auto;
+}
+.atention {
+    font-size: 1.3rem;
+    font-weight: bold;
+    padding: 50px 0px;  
+}
+.field-labelblock {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+select,input {
+    margin: 10px 0px;
+    width: 300px;
+    height: 30px;
+    border-radius: 5px;
+    border: 0px;
+}
+.field-content {
+    display: flex;
+    padding: 10px 0px 0px 0px;
+    @include breakpoint($iphone5) {
+    flex-direction: column;
+    }
+}
+.cw-agree {
+    width: 120px;
+    height: 100px;
+    margin: 10px;
+    @include breakpoint($iphone5) {
+        width: 30px;
+        height: 30px;      
+    }
+}
+.field {
+  height: 105px
+}
